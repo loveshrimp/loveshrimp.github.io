@@ -1,110 +1,104 @@
-/*
- * 时间：2018-09-24
- * 描述：The TOC module refers to 'https://github.com/codefine/hexo-theme-mellow', include toc.ejs、toc.js、toc.css. All rights reserved by codefine. 
-*/
-//The action and init() for toc.
-$.POSTTOC = {
-	init: function() {
-		setTimeout(function(THIS) {
-			THIS.toc().scroll($(window).scrollTop());
-			THIS.toc().go();
-		}, 500, this);
-		this.scroll();
-		this.resize();
-	},
-	toc: function() {
-		var toc = $('#post-toc');
-		return {
-			scroll: function(top) {
-				if(!toc.length) return;
-				$.toc().fixed(top);
-				$.toc().actived(top);
-			},
-			go: function() {
-				if(!toc.length) {
-					$('#post-content').css("width", "100%");
-					return;
-				};
-				$.toc().go();
-			}
-		}
-	},
-	scroll: function() {
-		$(window).scroll(function() {
-			var top = $(window).scrollTop();
-			$.POSTTOC.toc().scroll(top);
-		});
-	},
+define(function (){
 
-	resize: function() {
-		$(window).resize(function() {
-			var top = $(window).scrollTop();
-			$.POSTTOC.toc().scroll(top);
-		});
-	}
-};
+    var toggleTocArea = function(){
+        var valueHide = yiliaConfig.toc[0];
+        var valueShow = yiliaConfig.toc[1];
+        if ($(".left-col").is(":hidden")) {
+            $("#tocButton").attr("value", valueShow);
+        }
+        $("#tocButton").click(function() {
+            if ($("#toc").is(":hidden")) {
+                $("#tocButton").attr("value", valueHide);
+                $("#toc").slideDown(320);
+                $(".switch-btn, .switch-area").fadeOut(300);
+            }
+            else {
+                $("#tocButton").attr("value", valueShow);
+                $("#toc").slideUp(350);
+                $(".switch-btn, .switch-area").fadeIn(500);
+            }
+        })
+    }()
 
-$.POSTTOC.init();
+    var HideTOCifNoHeader = function(){
+        if (!$(".toc").length) {
+            $("#toc, #tocButton").hide();
+            $(".switch-btn, .switch-area").show();
+        }
+    }()
 
-//将function toc()合并到全局对象中
-$.extend({
-	toc: function(toc) {
-		var toc = $('.post-widget');
-		var tocBar = $('.post-toc-bar');
-		var headerH = $('header').outerHeight();
-		var titles = $('#post-content').find('h1, h2, h3, h4, h5, h6');
-		var scrollTop = $(document).scrollTop();
-		var card = $('#post-content');
-		return {
-			fixed: function(top) {
-				if(top >= headerH) {
-					toc.css({
-						'left': card.offset().left + card.outerWidth(true) + 40
-					});
-					toc.addClass('fixed');
-				} else {
-					toc.css('left', "");
-					toc.removeClass('fixed');
-				}
-			},
-			actived: function(top) {
-				var target;
-				titles.each(function(i, elem) {
-					if(top > $(elem).offset().top - 50) {
-						target = toc.find('a[href="#' + $(elem).attr('id') + '"]').parent();
-					}
-				});
-				if(target) {
-					toc.find('li.active').removeClass('active');
-					target.addClass('active');
-					target.parents('.post-toc-item').addClass('active');
-					tocBar.css("top", target.position().top);
-				}
-				if(top < titles.eq(0).offset().top) {
-					toc.find('li.active').removeClass('active');
-					var active = toc.find('a[href="#' + titles.eq(0).attr('id') + '"]').parent();
-					active.addClass('active');
-					tocBar.css("top", active.position().top);
-				}
-			},
-			go: function() {
-				toc.delegate('.post-toc-item', 'click', function(e) {
-					e.preventDefault();
-					e.stopPropagation();
-					var id = $(this).children(".post-toc-link").attr('href').replace(/^\#/, '');
-					var titles = $('#post-content').find('h1, h2, h3, h4, h5, h6');
-					titles.each(function(i, el) {
-						if($(this).attr('id') === id) {
-							var top = $(this).offset().top;
-							$('main,body,html').stop(true, false);
-							$('main,body,html').animate({
-								scrollTop: top
-							}, 300);
-						}
-					});
-				});
-			}
+    var $itemHasChild = $("#toc .toc-item:has(> .toc-child)");
+    var $titleHasChild = $itemHasChild.children(".toc-link");
+    $itemHasChild.prepend("<i class='fa fa-caret-down'></i><i class='fa fa-caret-right'></i>");
 
-		}
-	}
-});
+    var clickIcon = function(){
+        $("#toc .toc-item > i").click(function(){
+            $(this).siblings(".toc-child").slideToggle(100);
+            $(this).toggleClass("hide");
+            $(this).siblings("i").toggleClass("hide");
+        })
+    }()
+
+    var clickTitle = function(){
+        $titleHasChild.dblclick(function(){
+            $(this).siblings(".toc-child").hide(100);
+            $(this).siblings("i").toggleClass("hide");
+        })
+        // After dblclick enent
+        $titleHasChild.click(function(){
+            var $curentTocChild = $(this).siblings(".toc-child");
+            if ($curentTocChild.is(":hidden")) {
+                $curentTocChild.show(100);
+                $(this).siblings("i").toggleClass("hide");
+            }
+        })
+    }()
+
+    var clickTocTitle = function(){
+        var $iconToExpand = $(".toc-item > .fa-caret-right");
+        var $iconToFold = $(".toc-item > .fa-caret-down");
+        var $subToc = $titleHasChild.next(".toc-child");
+        $iconToExpand.addClass("hide");
+
+        var $tocTitle = $("#toc .toc-title");
+        if ($titleHasChild.length) {
+            $tocTitle.addClass("clickable");
+            $tocTitle.click(function(){
+                if ($subToc.is(":hidden")) {
+                    $subToc.show(150);
+                    $iconToExpand.removeClass("hide");
+                    $iconToFold.addClass("hide");
+                } else {
+                    $subToc.hide(100);
+                    $iconToExpand.addClass("hide");
+                    $iconToFold.removeClass("hide");
+                }
+            })
+            // TOC on mobile
+            if ($(".left-col").is(":hidden")) {
+                $("#container .toc-article .toc").css("padding-left", "1.4em");
+                $("#container .toc-article .toc-title").css("display", "initial");
+            }
+        }
+    }()
+
+    var TocNoWarp = function(cond){
+        if (cond) {
+            var $tocLink = $(".toc li a");
+            $tocLink.each(function(){
+                var title = $(this).find('.toc-text').text();
+                // Find elements with ellipsis
+                if (this.offsetWidth < this.scrollWidth) {
+                    $(this).attr("title", title);
+                    if (!!$().tooltip) { $(this).tooltip() }
+                }
+            })
+            var isSafari = !!navigator.userAgent.match(/Version\/[\d\.]+.*Safari/);
+            if (isSafari) {
+                $("#toc .toc-item i").css("bottom", ".1em");
+            }
+        }
+    }
+    TocNoWarp(yiliaConfig.toc[2]);
+
+})
