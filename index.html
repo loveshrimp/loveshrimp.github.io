@@ -310,6 +310,29 @@ F-->G
 G-->Quit</pre>
 
       
+      
+        
+        <p>计算机网络课上，老师要求我们用Winsocket编写一个web服务器。虽然环境限制在windows看着很蠢，不过做完后感觉收获还是很大，不同环境下socket编程差别也不是很大。有了此次实践之后其他的语言或者环境下的socket编程也能较为容易得完成。这篇文章主要记录实验中遇到的一些问题。具体代码请见<br><a href="https://github.com/loveshrimp/web-server" target="_blank" rel="noopener">web_server</a>  </p>
+<h1 id="Winsocket介绍"><a href="#Winsocket介绍" class="headerlink" title="Winsocket介绍"></a>Winsocket介绍</h1><h2 id="什么是Socket编程"><a href="#什么是Socket编程" class="headerlink" title="什么是Socket编程"></a>什么是Socket编程</h2><p>由于老师上课的时候从来没有具体的讲过Socket编程，因此，什么是Socket编程便成了我的第一个问题。<br>通俗的来讲socket编程就是为了来写可以联网的应用程序的。像我们平常使用的qq，它其实是一个程序，程序是静态的概念，就是一段代码。当我们双击qq图标时。操作系统将这段代码加载到内存中并分配相应的内存空间，此时便产生了一个进程。当我们再次双击图标时，程序又会再次加载一遍生成另外一个进程。Socket就是为了实现不同电脑（主机）上的不同进程之间的通信问题的一个编程接口。它是一个接口（称为套接字）你只需要将数据扔给他，他就会将数据传送到相互通信的另一个套接字中，而不需要关注数据是如何在运输层和链路层运输的。当有数据传输给你时，你只需要从socket中去取数据即可。</p>
+<h2 id="winSocket介绍"><a href="#winSocket介绍" class="headerlink" title="winSocket介绍"></a>winSocket介绍</h2><p>WinSocket是windows系统下的Socket编程api。<br>Winsock 是通过动态链接库的方式提供给软件开发者，而且从Windows 95以后已经被集成到了Windows操作系统中。Winsock主要经历了2个版本：Winsock 1.1和Winsock 2.0。Winsock 2.0是Winsock 1.1的扩展，它向下完全兼容。Winsock同时包括了16位和32位的编程接口，16位的Windows Socket 2应用程序使用的动态链接库是WINSOCK.DLL，而32位的Windows Socket应用程序使用WSOCK32.DLL（Winsock 1.1版）和WS2_32.DLL（Winsock 2.0版）。另外，使用Winsock API时要包含头文件winsock.h（Winsock 1.1版）或winsock2.h（Winsock 2.0版）。  </p>
+<hr>
+<h1 id="Web-server实验"><a href="#Web-server实验" class="headerlink" title="Web_server实验"></a>Web_server实验</h1><h2 id="Socket编程的一般步骤"><a href="#Socket编程的一般步骤" class="headerlink" title="Socket编程的一般步骤"></a>Socket编程的一般步骤</h2><pre class="mermaid">graph TD
+A(Init);
+B(Creat Listen_socket);
+C(Bind);
+D(Listen);
+E(Creat Connect_socket);
+F(Connection);
+G(Close Connect_socket);
+A-->B
+B-->C
+C-->D
+D-- if_request ---E
+E-->F
+F-->G
+G-->Quit</pre>
+
+    
     </div>
     
     <div class="article-info article-info-index">
