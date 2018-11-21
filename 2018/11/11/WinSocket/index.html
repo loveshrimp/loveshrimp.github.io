@@ -15,23 +15,23 @@
 
 
 
-<meta name="description" content="计算机网络课上，老师要求我们用Winsocket编写一个web服务器。虽然环境限制在windows看着很蠢，不过做完后感觉收获还是很大，不同环境下socket编程差别也不是很大。有了此次实践之后其他的语言或者环境下的socket编程也能较为容易得完成。这篇文章主要记录实验中遇到的一些问题。具体代码请见web_server">
-<meta name="keywords" content="computernet">
+<meta name="description" content="计算机网络课上，老师要求我们用Winsocket编写一个web服务器。代码">
+<meta name="keywords" content="WinSocket 网络通信 多线程">
 <meta property="og:type" content="article">
-<meta property="og:title" content="计算机网络实验">
+<meta property="og:title" content="WinSocket编程">
 <meta property="og:url" content="http://yoursite.com/2018/11/11/WinSocket/index.html">
-<meta property="og:site_name" content="Keep trying">
-<meta property="og:description" content="计算机网络课上，老师要求我们用Winsocket编写一个web服务器。虽然环境限制在windows看着很蠢，不过做完后感觉收获还是很大，不同环境下socket编程差别也不是很大。有了此次实践之后其他的语言或者环境下的socket编程也能较为容易得完成。这篇文章主要记录实验中遇到的一些问题。具体代码请见web_server">
+<meta property="og:site_name" content="不忘初心">
+<meta property="og:description" content="计算机网络课上，老师要求我们用Winsocket编写一个web服务器。代码">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-11-19T15:48:38.774Z">
+<meta property="og:updated_time" content="2018-11-21T12:14:58.378Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="计算机网络实验">
-<meta name="twitter:description" content="计算机网络课上，老师要求我们用Winsocket编写一个web服务器。虽然环境限制在windows看着很蠢，不过做完后感觉收获还是很大，不同环境下socket编程差别也不是很大。有了此次实践之后其他的语言或者环境下的socket编程也能较为容易得完成。这篇文章主要记录实验中遇到的一些问题。具体代码请见web_server">
+<meta name="twitter:title" content="WinSocket编程">
+<meta name="twitter:description" content="计算机网络课上，老师要求我们用Winsocket编写一个web服务器。代码">
 
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 
 
-    <link rel="alternate" href="/atom.xml" title="Keep trying" type="application/atom+xml">
+    <link rel="alternate" href="/atom.xml" title="不忘初心" type="application/atom+xml">
 
 
 
@@ -58,7 +58,7 @@
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 
-<title>计算机网络实验 | Keep trying</title>
+<title>WinSocket编程 | 不忘初心</title>
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
@@ -185,7 +185,7 @@
                 
                 <section class="switch-part switch-part2">
                     <div class="widget tagcloud" id="js-tagcloud">
-                        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/computernet/">computernet</a></li></ul>
+                        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/WinSocket-网络通信-多线程/">WinSocket 网络通信 多线程</a></li></ul>
                     </div>
                 </section>
                 
@@ -277,7 +277,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      计算机网络实验
+      WinSocket编程
     </h1>
   
 
@@ -286,13 +286,13 @@
       <div class="article-info article-info-post">
         
     <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/computernet/">computernet</a>
+    <a class="article-category-link" href="/categories/计算机网络/">计算机网络</a>
     </div>
 
 
         
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/computernet/">computernet</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/WinSocket-网络通信-多线程/">WinSocket 网络通信 多线程</a></li></ul>
     </div>
 
         <div class="clearfix"></div>
@@ -302,7 +302,7 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p>计算机网络课上，老师要求我们用Winsocket编写一个web服务器。虽然环境限制在windows看着很蠢，不过做完后感觉收获还是很大，不同环境下socket编程差别也不是很大。有了此次实践之后其他的语言或者环境下的socket编程也能较为容易得完成。这篇文章主要记录实验中遇到的一些问题。具体代码请见<br><a href="https://github.com/loveshrimp/web-server" target="_blank" rel="noopener">web_server</a>  </p>
+        <p>计算机网络课上，老师要求我们用Winsocket编写一个web服务器。<br><a href="https://github.com/loveshrimp/web-server" target="_blank" rel="noopener">代码</a>  </p>
 <a id="more"></a>
 <h1 id="Winsocket介绍"><a href="#Winsocket介绍" class="headerlink" title="Winsocket介绍"></a>Winsocket介绍</h1><h2 id="什么是Socket编程"><a href="#什么是Socket编程" class="headerlink" title="什么是Socket编程"></a>什么是Socket编程</h2><p>由于老师上课的时候从来没有具体的讲过Socket编程，因此，什么是Socket编程便成了我的第一个问题。<br>通俗的来讲socket编程就是为了来写可以联网的应用程序的。像我们平常使用的qq，它其实是一个程序，程序是静态的概念，就是一段代码。当我们双击qq图标时。操作系统将这段代码加载到内存中并分配相应的内存空间，此时便产生了一个进程。当我们再次双击图标时，程序又会再次加载一遍生成另外一个进程。Socket就是为了实现不同电脑（主机）上的不同进程之间的通信问题的一个编程接口。它是一个接口（称为套接字）你只需要将数据扔给他，他就会将数据传送到相互通信的另一个套接字中，而不需要关注数据是如何在运输层和链路层运输的。当有数据传输给你时，你只需要从socket中去取数据即可。</p>
 <h2 id="winSocket介绍"><a href="#winSocket介绍" class="headerlink" title="winSocket介绍"></a>winSocket介绍</h2><p>WinSocket是windows系统下的Socket编程api。<br>Winsock 是通过动态链接库的方式提供给软件开发者，而且从Windows 95以后已经被集成到了Windows操作系统中。Winsock主要经历了2个版本：Winsock 1.1和Winsock 2.0。Winsock 2.0是Winsock 1.1的扩展，它向下完全兼容。Winsock同时包括了16位和32位的编程接口，16位的Windows Socket 2应用程序使用的动态链接库是WINSOCK.DLL，而32位的Windows Socket应用程序使用WSOCK32.DLL（Winsock 1.1版）和WS2_32.DLL（Winsock 2.0版）。另外，使用Winsock API时要包含头文件winsock.h（Winsock 1.1版）或winsock2.h（Winsock 2.0版）。  </p>
@@ -373,7 +373,7 @@ G-->Quit</pre>
         </div>
         <script>
             window._bd_share_config={
-                "common":{"bdSnsKey":{},"bdText":"计算机网络实验　| Keep trying　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+                "common":{"bdSnsKey":{},"bdText":"WinSocket编程　| 不忘初心　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
         </script>
     
 
@@ -403,7 +403,7 @@ G-->Quit</pre>
         
     </div>
 
-    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2018/11/11/WinSocket/">计算机网络实验</a></li></ul>
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2018/11/11/WinSocket/">WinSocket编程</a></li></ul>
 
 
 
