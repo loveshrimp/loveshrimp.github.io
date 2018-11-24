@@ -23,7 +23,7 @@
 <meta property="og:site_name" content="不忘初心">
 <meta property="og:description" content="编写一个函数来验证输入的字符串是否是有效的 IPv4 或 IPv6 地址。">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-11-24T03:35:34.825Z">
+<meta property="og:updated_time" content="2018-11-24T03:38:39.923Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="算法1：验证IP（leetcode-468）">
 <meta name="twitter:description" content="编写一个函数来验证输入的字符串是否是有效的 IPv4 或 IPv6 地址。">
@@ -352,9 +352,9 @@
 </li>
 </ol>
 <p>需要注意的有两点：一是对”.”的转义，二是或运算符的优先级最低，因此遇到多个或运算的时候每个部分都要加上括号避免出现二义性。<br>3.正则表达式：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ipv4:(([1-9]?[0-9])|(1[0-9]&#123;2&#125;)|(24[0-9])|(25[0-5]))(\.(([1-9]?[0-9])|(1[0-9]&#123;2&#125;)|(24[0-9])|(25[0-5])))&#123;3&#125;</span><br><span class="line">ipv6:([0-9a-fA-F])&#123;1,4&#125;(:([0-9a-fA-F])&#123;1,4&#125;)&#123;7&#125;</span><br></pre></td></tr></table></figure></p>
+<p>本题在掌握正则表达式后相对比较简单，对于正则表达式的书写还得再多加练习。然而正则虽好，编译器起来太耗时间了，该代码在leetcode上的执行用时60ms（击败0%的用户），emmmm….，好吧还是我太菜，不用正则的话能想到的改进就是c语言中的strchr()和strrchr()或者用类似python中的split<br>()来处理字符串。后面再测试测试。  </p>
 <hr>
-<p>本题在掌握正则表达式后相对比较简单，对于正则表达式的书写还得再多加练习。然而正则虽好，编译器起来太耗时间了，该代码在leetcode上的执行用时60ms（击败0%的用户），emmmm….，好吧还是我太菜，不用正则的话能想到的改进就是c语言中的strchr()和strrchr()或者用类似python中的split</p>
-<h2 id="来处理字符串。后面再测试测试。"><a href="#来处理字符串。后面再测试测试。" class="headerlink" title="()来处理字符串。后面再测试测试。  "></a>()来处理字符串。后面再测试测试。  </h2><h2 id="分割线"><a href="#分割线" class="headerlink" title="分割线"></a>分割线</h2><p>待改进…</p>
+<h2 id="分割线"><a href="#分割线" class="headerlink" title="分割线"></a>分割线</h2><p>待改进…</p>
 
       
     </div>
@@ -387,7 +387,7 @@
     <div id="toc" class="toc-article">
         <strong class="toc-title">文章目录</strong>
         
-            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#问题描述："><span class="toc-number">1.</span> <span class="toc-text">问题描述：</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#我的解答"><span class="toc-number">2.</span> <span class="toc-text">我的解答</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#所有代码"><span class="toc-number">2.1.</span> <span class="toc-text">所有代码</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#问题分析"><span class="toc-number">2.2.</span> <span class="toc-text">问题分析</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#问题解决"><span class="toc-number">2.3.</span> <span class="toc-text">问题解决</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#来处理字符串。后面再测试测试。"><span class="toc-number">2.4.</span> <span class="toc-text">()来处理字符串。后面再测试测试。  </span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#分割线"><span class="toc-number">2.5.</span> <span class="toc-text">分割线</span></a></li></ol></li></ol>
+            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#问题描述："><span class="toc-number">1.</span> <span class="toc-text">问题描述：</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#我的解答"><span class="toc-number">2.</span> <span class="toc-text">我的解答</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#所有代码"><span class="toc-number">2.1.</span> <span class="toc-text">所有代码</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#问题分析"><span class="toc-number">2.2.</span> <span class="toc-text">问题分析</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#问题解决"><span class="toc-number">2.3.</span> <span class="toc-text">问题解决</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#分割线"><span class="toc-number">2.4.</span> <span class="toc-text">分割线</span></a></li></ol></li></ol>
         
     </div>
     <style>
