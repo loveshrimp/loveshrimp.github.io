@@ -3,6 +3,35 @@
   
     
     <entry>
+      <title>WinSocket编程实现web_server</title>
+      <link href="/2018/11/25/Web-server/"/>
+      <url>/2018/11/25/Web-server/</url>
+      
+        <content type="html"><![CDATA[<p>计算机网络实验：用Winsocket编写一个web服务器。要求：能够处理响应报文，发送各种类型的文件，多线程实现。<br><a id="more"></a></p><h2 id="Winsocket介绍"><a href="#Winsocket介绍" class="headerlink" title="Winsocket介绍"></a>Winsocket介绍</h2><h3 id="什么是Socket编程"><a href="#什么是Socket编程" class="headerlink" title="什么是Socket编程"></a>什么是Socket编程</h3><p>由于老师上课的时候从来没有具体的讲过Socket编程，因此，什么是Socket编程便成了我的第一个问题。<br>通俗的来讲socket编程就是为了来写可以联网的应用程序的。像我们平常使用的qq，它其实是一个程序，程序是静态的概念，就是一段代码。当我们双击qq图标时。操作系统将这段代码加载到内存中并分配相应的内存空间，此时便产生了一个进程。当我们再次双击图标时，程序又会再次加载一遍生成另外一个进程。Socket就是为了实现不同电脑（主机）上的不同进程之间的通信问题的一个编程接口。它是一个接口（称为套接字）你只需要将数据扔给他，他就会将数据传送到相互通信的另一个套接字中，而不需要关注数据是如何在运输层和链路层运输的。当有数据传输给你时，你只需要从socket中去取数据即可。</p><h3 id="winSocket介绍"><a href="#winSocket介绍" class="headerlink" title="winSocket介绍"></a>winSocket介绍</h3><p>WinSocket是windows系统下的Socket编程api。<br>Winsock 是通过动态链接库的方式提供给软件开发者，而且从Windows 95以后已经被集成到了Windows操作系统中。Winsock主要经历了2个版本：Winsock 1.1和Winsock 2.0。Winsock 2.0是Winsock 1.1的扩展，它向下完全兼容。Winsock同时包括了16位和32位的编程接口，16位的Windows Socket 2应用程序使用的动态链接库是WINSOCK.DLL，而32位的Windows Socket应用程序使用WSOCK32.DLL（Winsock 1.1版）和WS2_32.DLL（Winsock 2.0版）。另外，使用Winsock API时要包含头文件winsock.h（Winsock 1.1版）或winsock2.h（Winsock 2.0版）。  </p><hr><h2 id="Web-server实验"><a href="#Web-server实验" class="headerlink" title="Web_server实验"></a>Web_server实验</h2><h3 id="Socket编程的一般步骤"><a href="#Socket编程的一般步骤" class="headerlink" title="Socket编程的一般步骤"></a>Socket编程的一般步骤</h3><p><a href="1.png"></a></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 计算机网络 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> WinSocket </tag>
+            
+            <tag> 网络通信 </tag>
+            
+            <tag> 多线程 </tag>
+            
+            <tag> web_server </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
       <title>算法3：买卖股票的最佳时机</title>
       <link href="/2018/11/24/%E7%AE%97%E6%B3%953%EF%BC%9A%E4%B9%B0%E5%8D%96%E8%82%A1%E7%A5%A8%E7%9A%84%E6%9C%80%E4%BD%B3%E6%97%B6%E6%9C%BA/"/>
       <url>/2018/11/24/%E7%AE%97%E6%B3%953%EF%BC%9A%E4%B9%B0%E5%8D%96%E8%82%A1%E7%A5%A8%E7%9A%84%E6%9C%80%E4%BD%B3%E6%97%B6%E6%9C%BA/</url>
@@ -68,33 +97,6 @@
             <tag> 字符串匹配 </tag>
             
             <tag> 正则表达式 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    <entry>
-      <title>WinSocket编程</title>
-      <link href="/2018/11/11/WinSocket/"/>
-      <url>/2018/11/11/WinSocket/</url>
-      
-        <content type="html"><![CDATA[<p>计算机网络实验：用Winsocket编写一个web服务器。要求：能够处理响应报文，发送各种类型的文件，多线程实现。<br><a id="more"></a></p><h2 id="Winsocket介绍"><a href="#Winsocket介绍" class="headerlink" title="Winsocket介绍"></a>Winsocket介绍</h2><h3 id="什么是Socket编程"><a href="#什么是Socket编程" class="headerlink" title="什么是Socket编程"></a>什么是Socket编程</h3><p>由于老师上课的时候从来没有具体的讲过Socket编程，因此，什么是Socket编程便成了我的第一个问题。<br>通俗的来讲socket编程就是为了来写可以联网的应用程序的。像我们平常使用的qq，它其实是一个程序，程序是静态的概念，就是一段代码。当我们双击qq图标时。操作系统将这段代码加载到内存中并分配相应的内存空间，此时便产生了一个进程。当我们再次双击图标时，程序又会再次加载一遍生成另外一个进程。Socket就是为了实现不同电脑（主机）上的不同进程之间的通信问题的一个编程接口。它是一个接口（称为套接字）你只需要将数据扔给他，他就会将数据传送到相互通信的另一个套接字中，而不需要关注数据是如何在运输层和链路层运输的。当有数据传输给你时，你只需要从socket中去取数据即可。</p><h3 id="winSocket介绍"><a href="#winSocket介绍" class="headerlink" title="winSocket介绍"></a>winSocket介绍</h3><p>WinSocket是windows系统下的Socket编程api。<br>Winsock 是通过动态链接库的方式提供给软件开发者，而且从Windows 95以后已经被集成到了Windows操作系统中。Winsock主要经历了2个版本：Winsock 1.1和Winsock 2.0。Winsock 2.0是Winsock 1.1的扩展，它向下完全兼容。Winsock同时包括了16位和32位的编程接口，16位的Windows Socket 2应用程序使用的动态链接库是WINSOCK.DLL，而32位的Windows Socket应用程序使用WSOCK32.DLL（Winsock 1.1版）和WS2_32.DLL（Winsock 2.0版）。另外，使用Winsock API时要包含头文件winsock.h（Winsock 1.1版）或winsock2.h（Winsock 2.0版）。  </p><hr><h2 id="Web-server实验"><a href="#Web-server实验" class="headerlink" title="Web_server实验"></a>Web_server实验</h2><h3 id="Socket编程的一般步骤"><a href="#Socket编程的一般步骤" class="headerlink" title="Socket编程的一般步骤"></a>Socket编程的一般步骤</h3><p><a href="1.png"></a></p>]]></content>
-      
-      
-      <categories>
-          
-          <category> 计算机网络 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> WinSocket </tag>
-            
-            <tag> 网络通信 </tag>
-            
-            <tag> 多线程 </tag>
             
         </tags>
       
