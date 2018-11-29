@@ -3,6 +3,31 @@
   
     
     <entry>
+      <title>C++STL部分整理</title>
+      <link href="/2018/11/29/C-STL%E9%83%A8%E5%88%86%E6%95%B4%E7%90%86/"/>
+      <url>/2018/11/29/C-STL%E9%83%A8%E5%88%86%E6%95%B4%E7%90%86/</url>
+      
+        <content type="html"><![CDATA[<p>这篇博客用于整理平常经常用到的C++好用的函数（because经常忘记）和一些语法解析。<br><a id="more"></a><br>以前没学过C++，总感觉C++就是在C的基础上多了一点面向对象的东西和多了一些库函数和几个用法。然而最近接触过之后被这门语言折服了。就我学过的高级语言来说，他比C好用太多了，带给人的方便不是一点点，又比python效率高很多，实在让人难以不喜欢。一开始只是觉得C++的库函数很多，而且相较功能相似的C库函数来说封装的更好，让人更方便用。现在在实验中慢慢的体会到了一点面向对象的东西，不得不佩服（有时间在mooc上好好的再学学这种思想）。这篇博客用来整理一些平常经常用到的函数以及一些语法细节。C++是一门很重细节的语言，注重细节才能写出更加强大的程序。</p><h2 id="函数整理"><a href="#函数整理" class="headerlink" title="函数整理"></a>函数整理</h2><h3 id="排序-sort"><a href="#排序-sort" class="headerlink" title="排序-sort()"></a>排序-sort()</h3><p>函数原型<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//两参数</span></span><br><span class="line"><span class="keyword">template</span> &lt;<span class="class"><span class="keyword">class</span> <span class="title">RandomAccessIterator</span>&gt;</span></span><br><span class="line"><span class="class">  <span class="title">void</span> <span class="title">sort</span> (<span class="title">RandomAccessIterator</span> <span class="title">first</span>, <span class="title">RandomAccessIterator</span> <span class="title">last</span>);</span></span><br><span class="line"><span class="comment">//三参数</span></span><br><span class="line"><span class="keyword">template</span> &lt;<span class="class"><span class="keyword">class</span> <span class="title">RandomAccessIterator</span>, <span class="title">class</span> <span class="title">Compare</span>&gt;</span></span><br><span class="line"><span class="class">  <span class="title">void</span> <span class="title">sort</span> (<span class="title">RandomAccessIterator</span> <span class="title">first</span>, <span class="title">RandomAccessIterator</span> <span class="title">last</span>, <span class="title">Compare</span> <span class="title">comp</span>);</span></span><br></pre></td></tr></table></figure></p><p>参数解释：<br>[first,last)<br><a href="https://zh.cppreference.com/w/cpp/named_req/RandomAccessIterator" target="_blank" rel="noopener">RandomAccessIterator</a> first – 排序的数组的起始地址<br><a href="https://zh.cppreference.com/w/cpp/named_req/RandomAccessIterator" target="_blank" rel="noopener">RandomAccessIterator</a> last  – 排序的数组的结束地址<br>Compare comp   – 比较函数<br><a href="http://www.cplusplus.com/reference/algorithm/sort/" target="_blank" rel="noopener">用法示例</a>            </p><h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><h2 id="相关文章"><a href="#相关文章" class="headerlink" title="相关文章"></a>相关文章</h2>]]></content>
+      
+      
+      <categories>
+          
+          <category> C++ </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> C++语法 </tag>
+            
+            <tag> C++函数 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
       <title>WinSocket编程实现web_server</title>
       <link href="/2018/11/25/Web-server/"/>
       <url>/2018/11/25/Web-server/</url>

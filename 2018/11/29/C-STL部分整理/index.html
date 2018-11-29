@@ -14,17 +14,19 @@
 <meta name="author" content="Shao Ze wei">
 
 
-    
-    
 
-
-<meta property="og:type" content="website">
-<meta property="og:title" content="不忘初心">
-<meta property="og:url" content="http://yoursite.com/index.html">
+<meta name="description" content="这篇博客用于整理平常经常用到的C++好用的函数（because经常忘记）和一些语法解析。">
+<meta name="keywords" content="C++语法,C++函数">
+<meta property="og:type" content="article">
+<meta property="og:title" content="C++STL部分整理">
+<meta property="og:url" content="http://yoursite.com/2018/11/29/C-STL部分整理/index.html">
 <meta property="og:site_name" content="不忘初心">
+<meta property="og:description" content="这篇博客用于整理平常经常用到的C++好用的函数（because经常忘记）和一些语法解析。">
 <meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2018-11-29T08:44:31.599Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="不忘初心">
+<meta name="twitter:title" content="C++STL部分整理">
+<meta name="twitter:description" content="这篇博客用于整理平常经常用到的C++好用的函数（because经常忘记）和一些语法解析。">
 
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 
@@ -52,13 +54,11 @@
 <link rel="stylesheet" href="/css/style.css">
 
 
-    <style> .article { opacity: 0;} </style>
-
 
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 
-<title>不忘初心</title>
+<title>C++STL部分整理 | 不忘初心</title>
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
@@ -67,8 +67,8 @@
     var yiliaConfig = {
         fancybox: true,
         animate: true,
-        isHome: true,
-        isPost: false,
+        isHome: false,
+        isPost: true,
         isArchive: false,
         isTag: false,
         isCategory: false,
@@ -265,9 +265,7 @@
     </div>
     <link class="menu-list" tags="标签" friends="友情链接" about="关于我">
 </nav>
-      <div class="body-wrap">
-  
-    <article id="post-C-STL部分整理" class="article article-type-post" itemscope="" itemprop="blogPost">
+      <div class="body-wrap"><article id="post-C-STL部分整理" class="article article-type-post" itemscope="" itemprop="blogPost">
   
     <div class="article-meta">
       <a href="/2018/11/29/C-STL部分整理/" class="article-date">
@@ -285,319 +283,103 @@
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/11/29/C-STL部分整理/">C++STL部分整理</a>
+    <h1 class="article-title" itemprop="name">
+      C++STL部分整理
     </h1>
   
 
       </header>
       
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <p>这篇博客用于整理平常经常用到的C++好用的函数（because经常忘记）和一些语法解析。<br>
-          
-      
-    </p></div>
-    
-    <div class="article-info article-info-index">
-      
-      
+      <div class="article-info article-info-post">
+        
     <div class="article-category tagcloud">
     <a class="article-category-link" href="/categories/C/">C++</a>
     </div>
 
 
-      
+        
     <div class="article-tag tagcloud">
         <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C-函数/">C++函数</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C-语法/">C++语法</a></li></ul>
     </div>
 
-      
-        <p class="article-more-link">
-          <a href="/2018/11/29/C-STL部分整理/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-Web-server" class="article article-type-post" itemscope="" itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2018/11/25/Web-server/" class="article-date">
-      <time datetime="2018-11-25T08:33:08.368Z" itemprop="datePublished">2018-11-25</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/11/25/Web-server/">WinSocket编程实现web_server</a>
-    </h1>
-  
-
-      </header>
+        <div class="clearfix"></div>
+      </div>
       
     
     <div class="article-entry" itemprop="articleBody">
       
           
-              <p>计算机网络实验：用Winsocket编写一个web服务器。要求：能够处理响应报文，发送各种类型的文件，多线程实现。<br>
-          
+        <p>这篇博客用于整理平常经常用到的C++好用的函数（because经常忘记）和一些语法解析。<br><a id="more"></a><br>以前没学过C++，总感觉C++就是在C的基础上多了一点面向对象的东西和多了一些库函数和几个用法。然而最近接触过之后被这门语言折服了。就我学过的高级语言来说，他比C好用太多了，带给人的方便不是一点点，又比python效率高很多，实在让人难以不喜欢。一开始只是觉得C++的库函数很多，而且相较功能相似的C库函数来说封装的更好，让人更方便用。现在在实验中慢慢的体会到了一点面向对象的东西，不得不佩服（有时间在mooc上好好的再学学这种思想）。这篇博客用来整理一些平常经常用到的函数以及一些语法细节。C++是一门很重细节的语言，注重细节才能写出更加强大的程序。</p>
+<h2 id="函数整理"><a href="#函数整理" class="headerlink" title="函数整理"></a>函数整理</h2><h3 id="排序-sort"><a href="#排序-sort" class="headerlink" title="排序-sort()"></a>排序-sort()</h3><p>函数原型<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//两参数</span></span><br><span class="line"><span class="keyword">template</span> &lt;<span class="class"><span class="keyword">class</span> <span class="title">RandomAccessIterator</span>&gt;</span></span><br><span class="line"><span class="class">  <span class="title">void</span> <span class="title">sort</span> (<span class="title">RandomAccessIterator</span> <span class="title">first</span>, <span class="title">RandomAccessIterator</span> <span class="title">last</span>);</span></span><br><span class="line"><span class="comment">//三参数</span></span><br><span class="line"><span class="keyword">template</span> &lt;<span class="class"><span class="keyword">class</span> <span class="title">RandomAccessIterator</span>, <span class="title">class</span> <span class="title">Compare</span>&gt;</span></span><br><span class="line"><span class="class">  <span class="title">void</span> <span class="title">sort</span> (<span class="title">RandomAccessIterator</span> <span class="title">first</span>, <span class="title">RandomAccessIterator</span> <span class="title">last</span>, <span class="title">Compare</span> <span class="title">comp</span>);</span></span><br></pre></td></tr></table></figure></p>
+<p>参数解释：<br>[first,last)<br><a href="https://zh.cppreference.com/w/cpp/named_req/RandomAccessIterator" target="_blank" rel="noopener">RandomAccessIterator</a> first – 排序的数组的起始地址<br><a href="https://zh.cppreference.com/w/cpp/named_req/RandomAccessIterator" target="_blank" rel="noopener">RandomAccessIterator</a> last  – 排序的数组的结束地址<br>Compare comp   – 比较函数<br><a href="http://www.cplusplus.com/reference/algorithm/sort/" target="_blank" rel="noopener">用法示例</a>            </p>
+<h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><h2 id="相关文章"><a href="#相关文章" class="headerlink" title="相关文章"></a>相关文章</h2>
       
-    </p></div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/计算机网络/">计算机网络</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/WinSocket/">WinSocket</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/web-server/">web_server</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/多线程/">多线程</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/网络通信/">网络通信</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a href="/2018/11/25/Web-server/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
     </div>
     
   </div>
   
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-算法3：买卖股票的最佳时机" class="article article-type-post" itemscope="" itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2018/11/24/算法3：买卖股票的最佳时机/" class="article-date">
-      <time datetime="2018-11-24T11:04:07.000Z" itemprop="datePublished">2018-11-24</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
     
-      <input type="hidden" class="isFancy">
-    
-    
-      <header class="article-header">
+
+
+    <nav id="article-nav">
         
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/11/24/算法3：买卖股票的最佳时机/">算法3：买卖股票的最佳时机</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <p>该问题有四道题，难度依次递增，分别是:买卖股票的最佳时机Ⅰ(leetcode-121)，买卖股票的最佳时机Ⅱ(leetcode-122)，买卖股票的最佳时机III(leetcode-123)，买卖股票的最佳时机Ⅳ(leetcode-188)。<br>
-          
-      
-    </p></div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/每周三道算法题/">每周三道算法题</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/动态规划/">动态规划</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a href="/2018/11/24/算法3：买卖股票的最佳时机/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-算法2：扫雷小游戏" class="article article-type-post" itemscope="" itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2018/11/24/算法2：扫雷小游戏/" class="article-date">
-      <time datetime="2018-11-24T02:30:23.000Z" itemprop="datePublished">2018-11-24</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy">
-    
-    
-      <header class="article-header">
         
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/11/24/算法2：扫雷小游戏/">算法2：扫雷小游戏（leetcode-529）</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <p>实现扫雷小游戏的游戏逻辑。<br>
-          
-      
-    </p></div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/每周三道算法题/">每周三道算法题</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/BFS/">BFS</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a href="/2018/11/24/算法2：扫雷小游戏/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-算法1：验证IP" class="article article-type-post" itemscope="" itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2018/11/22/算法1：验证IP/" class="article-date">
-      <time datetime="2018-11-22T00:35:38.000Z" itemprop="datePublished">2018-11-22</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy">
-    
-    
-      <header class="article-header">
+            <div id="article-nav-older" class="article-nav-title">
+                <a href="/2018/11/25/Web-server/">
+                    WinSocket编程实现web_server
+                </a>
+            </div>
         
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/11/22/算法1：验证IP/">算法1：验证IP（leetcode-468）</a>
-    </h1>
-  
+    </nav>
 
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <p>编写一个函数来验证输入的字符串是否是有效的 IPv4 或 IPv6 地址。<br>
-          
-      
-    </p></div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/每周三道算法题/">每周三道算法题</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/字符串匹配/">字符串匹配</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/正则表达式/">正则表达式</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a href="/2018/11/22/算法1：验证IP/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
   
 </article>
 
+    <div id="toc" class="toc-article">
+        <strong class="toc-title">文章目录</strong>
+        
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#函数整理"><span class="toc-number">1.</span> <span class="toc-text">函数整理</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#排序-sort"><span class="toc-number">1.1.</span> <span class="toc-text">排序-sort()</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#其他"><span class="toc-number">2.</span> <span class="toc-text">其他</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#相关文章"><span class="toc-number">3.</span> <span class="toc-text">相关文章</span></a></li></ol>
+        
+    </div>
+    <style>
+        .left-col .switch-btn,
+        .left-col .switch-area {
+            display: none;
+        }
+        .toc-level-3 i,
+        .toc-level-3 ol {
+            display: none !important;
+        }
+    </style>
+
+    <input type="button" id="tocButton" value="隐藏目录" title="点击按钮隐藏或者显示文章目录">
+
+    <script>
+        yiliaConfig.toc = ["隐藏目录", "显示目录", !!"false"];
+    </script>
+
+
+
+    
+<div class="share">
+    
+        <div class="bdsharebuttonbox">
+            <a href="#" class="fa fa-twitter bds_twi" data-cmd="twi" title="分享到推特"></a>
+            <a href="#" class="fa fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+            <a href="#" class="fa fa-qq bds_sqq" data-cmd="sqq" title="分享给 QQ 好友"></a>
+            <a href="#" class="fa fa-files-o bds_copy" data-cmd="copy" title="复制网址"></a>
+            <a href="#" class="fa fa fa-envelope-o bds_mail" data-cmd="mail" title="通过邮件分享"></a>
+            <a href="#" class="fa fa-weixin bds_weixin" data-cmd="weixin" title="生成文章二维码"></a>
+            <a href="#" class="fa fa-share-alt bds_more" data-cmd="more"></a>
+        </div>
+        <script>
+            window._bd_share_config={
+                "common":{"bdSnsKey":{},"bdText":"C++STL部分整理　| 不忘初心　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+        </script>
+    
+
+    
+</div>
 
 
 
@@ -605,9 +387,33 @@
 
 
 
+    
 
-  
-  
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
+        
+
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+
+        
+            <a href="/2018/11/25/Web-server/" title="下一篇: WinSocket编程实现web_server">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2018/11/29/C-STL部分整理/">C++STL部分整理</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/11/25/Web-server/">WinSocket编程实现web_server</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/11/24/算法3：买卖股票的最佳时机/">算法3：买卖股票的最佳时机</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/11/24/算法2：扫雷小游戏/">算法2：扫雷小游戏（leetcode-529）</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/11/22/算法1：验证IP/">算法1：验证IP（leetcode-468）</a></li></ul>
+
+
+
+
+    <script>
+        
+    </script>
 </div>
       <footer id="footer">
     <div class="outer">
