@@ -15,18 +15,17 @@
 
 
 
-<meta name="description" content="编写一个函数来验证输入的字符串是否是有效的 IPv4 或 IPv6 地址。">
-<meta name="keywords" content="字符串匹配,正则表达式">
+<meta name="description" content="qq 一级标题二级标题三级标题四级标题五级标题六级标题">
 <meta property="og:type" content="article">
-<meta property="og:title" content="算法1：验证IP（leetcode-468）">
-<meta property="og:url" content="http://yoursite.com/2018/11/22/算法1：验证IP/index.html">
+<meta property="og:title" content="test">
+<meta property="og:url" content="http://yoursite.com/2018/11/29/test/index.html">
 <meta property="og:site_name" content="不忘初心">
-<meta property="og:description" content="编写一个函数来验证输入的字符串是否是有效的 IPv4 或 IPv6 地址。">
+<meta property="og:description" content="qq 一级标题二级标题三级标题四级标题五级标题六级标题">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-11-25T14:18:24.164Z">
+<meta property="og:updated_time" content="2018-11-29T00:43:24.259Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="算法1：验证IP（leetcode-468）">
-<meta name="twitter:description" content="编写一个函数来验证输入的字符串是否是有效的 IPv4 或 IPv6 地址。">
+<meta name="twitter:title" content="test">
+<meta name="twitter:description" content="qq 一级标题二级标题三级标题四级标题五级标题六级标题">
 
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 
@@ -58,7 +57,7 @@
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 
-<title>算法1：验证IP（leetcode-468） | 不忘初心</title>
+<title>test | 不忘初心</title>
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
@@ -265,11 +264,11 @@
     </div>
     <link class="menu-list" tags="标签" friends="友情链接" about="关于我">
 </nav>
-      <div class="body-wrap"><article id="post-算法1：验证IP" class="article article-type-post" itemscope="" itemprop="blogPost">
+      <div class="body-wrap"><article id="post-test" class="article article-type-post" itemscope="" itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2018/11/22/算法1：验证IP/" class="article-date">
-      <time datetime="2018-11-22T00:35:38.000Z" itemprop="datePublished">2018-11-22</time>
+      <a href="/2018/11/29/test/" class="article-date">
+      <time datetime="2018-11-29T00:41:39.000Z" itemprop="datePublished">2018-11-29</time>
 </a>
 
 
@@ -284,7 +283,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      算法1：验证IP（leetcode-468）
+      test
     </h1>
   
 
@@ -292,16 +291,8 @@
       
       <div class="article-info article-info-post">
         
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/每周三道算法题/">每周三道算法题</a>
-    </div>
-
 
         
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/字符串匹配/">字符串匹配</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/正则表达式/">正则表达式</a></li></ul>
-    </div>
-
         <div class="clearfix"></div>
       </div>
       
@@ -309,53 +300,8 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p>编写一个函数来验证输入的字符串是否是有效的 IPv4 或 IPv6 地址。<br><a id="more"></a></p>
-<h2 id="问题描述："><a href="#问题描述：" class="headerlink" title="问题描述："></a>问题描述：</h2><p><strong>IPv4</strong>：地址由十进制数和点来表示，每个地址包含4个十进制数，其范围为 0 - 255， 用(“.”)分割。比如，172.16.254.1；<br>同时，IPv4 地址内的数不会以 0 开头。比如，地址 172.16.254.01 是不合法的。</p>
-<p><strong>IPv6</strong>：地址由8组16进制的数字来表示，每组表示 16 比特。这些组数字通过 (“:”)分割。比如,  2001:0db8:85a3:0000:0000:8a2e:0370:7334 是一个有效的地址。而且，我们可以加入一些以 0 开头的数字，字母可以使用大写，也可以是小写。所以， 2001:db8:85a3:0:0:8A2E:0370:7334 也是一个有效的 IPv6 address地址 (即，忽略 0 开头，忽略大小写)。<br>然而，我们不能因为某个组的值为 0，而使用一个空的组，以至于出现 (::) 的情况。 比如， 2001:0db8:85a3::8A2E:0370:7334 是无效的 IPv6 地址。<br>同时，在 IPv6 地址中，多余的 0 也是不被允许的。比如， 02001:0db8:85a3:0000:0000:8a2e:0370:7334 是无效的。 </p>
-<p><strong>说明</strong>: 你可以认为给定的字符串里没有空格或者其他特殊字符。  </p>
-<p><strong>示例 1</strong>:  </p>
-<blockquote>
-<p>输入: “172.16.254.1”</p>
-<p>输出: “IPv4”</p>
-</blockquote>
-<p>解释: 这是一个有效的 IPv4 地址, 所以返回 “IPv4”。</p>
-<p><strong>示例 2</strong>:  </p>
-<blockquote>
-<p>输入: “2001:0db8:85a3:0:0:8A2E:0370:7334”</p>
-<p>输出: “IPv6”</p>
-</blockquote>
-<p>解释: 这是一个有效的 IPv6 地址, 所以返回 “IPv6”。</p>
-<p><strong>示例 3</strong>:  </p>
-<blockquote>
-<p>输入: “256.256.256.256”</p>
-<p>输出: “Neither”</p>
-</blockquote>
-<p>解释: 这个地址既不是 IPv4 也不是 IPv6 地址。</p>
-<h2 id="我的解答"><a href="#我的解答" class="headerlink" title="我的解答"></a>我的解答</h2><h3 id="所有代码"><a href="#所有代码" class="headerlink" title="所有代码"></a>所有代码</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">isIPv4</span><span class="params">(<span class="built_in">string</span> IP)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="built_in">string</span> pattern&#123; <span class="string">"(([1-9]?[0-9])|(1[0-9]&#123;2&#125;)|(24[0-9])|(25[0-5]))(\.(([1-9]?[0-9])|(1[0-9]&#123;2&#125;)|(24[0-9])|(25[0-5])))&#123;3&#125;"</span> &#125;;</span><br><span class="line">	<span class="function">regex <span class="title">re</span><span class="params">(pattern)</span></span>;</span><br><span class="line">	<span class="keyword">if</span>(regex_match(IP, re))</span><br><span class="line">		<span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">	<span class="keyword">else</span> <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">isIPv6</span><span class="params">(<span class="built_in">string</span> IP)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="built_in">string</span> pattern&#123; <span class="string">"([0-9a-fA-F])&#123;1,4&#125;(:([0-9a-fA-F])&#123;1,4&#125;)&#123;7&#125;"</span> &#125;;</span><br><span class="line">	<span class="function">regex <span class="title">re</span><span class="params">(pattern)</span></span>;</span><br><span class="line">	<span class="keyword">if</span> (regex_match(IP, re))</span><br><span class="line">		<span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">	<span class="keyword">else</span> <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="built_in">string</span> <span class="title">validIPAddress</span><span class="params">(<span class="built_in">string</span> IP)</span> </span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">return</span>(isIPv4(IP) ? <span class="string">"IPv4"</span>: (isIPv6(IP) ? <span class="string">"IPv6"</span>:<span class="string">"Neither"</span>));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="问题分析"><a href="#问题分析" class="headerlink" title="问题分析"></a>问题分析</h3><ul>
-<li>首先是方法的选择（如果不用正则表达式将会很麻烦）</li>
-<li>正则表达式的书写</li>
-<li>C++正则表达式的用法<h3 id="问题解决"><a href="#问题解决" class="headerlink" title="问题解决"></a>问题解决</h3></li>
-</ul>
-<ol>
-<li><p>C++正则表达式介绍参见（<a href="https://blog.csdn.net/fengbingchun/article/details/54835571" target="_blank" rel="noopener">文章一</a>，<a href="https://www.cnblogs.com/ittinybird/p/4853532.html" target="_blank" rel="noopener">文章二</a>）</p>
-</li>
-<li><p>正则表达式的书写是一大难点需要多加练习加以积累。在本题中难点是ipv4的正则表达式书写。主要学会如何表示[0-255]的数。根据各部分的特征可以将这些数分为。</p>
-<blockquote>
-<ul>
-<li>0-99:([1-9]?[0-9])</li>
-<li>100-199:(1[0-9]{2})</li>
-<li>200-249:(24[0-9])</li>
-<li>250-255:(25[0-5])</li>
-</ul>
-</blockquote>
-</li>
-</ol>
-<p>需要注意的有两点：一是对”.”的转义，二是或运算符的优先级最低，因此遇到多个或运算的时候每个部分都要加上括号避免出现二义性。<br>3.正则表达式：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ipv4:(([1-9]?[0-9])|(1[0-9]&#123;2&#125;)|(24[0-9])|(25[0-5]))(\.(([1-9]?[0-9])|(1[0-9]&#123;2&#125;)|(24[0-9])|(25[0-5])))&#123;3&#125;</span><br><span class="line">ipv6:([0-9a-fA-F])&#123;1,4&#125;(:([0-9a-fA-F])&#123;1,4&#125;)&#123;7&#125;</span><br></pre></td></tr></table></figure></p>
-<p>本题在掌握正则表达式后相对比较简单，对于正则表达式的书写还得再多加练习。然而正则虽好，编译器起来太耗时间了，该代码在leetcode上的执行用时60ms（击败0%的用户），emmmm….，好吧还是我太菜，不用正则的话能想到的改进就是c语言中的strchr()和strrchr()或者用类似python中的split()来处理字符串。后面再测试测试。  </p>
-<hr>
-<h2 id="分割线"><a href="#分割线" class="headerlink" title="分割线"></a>分割线</h2><p>待改进…</p>
-
+        <p><em>q</em><br><strong>q</strong></p>
+<h2 id="一级标题"><a href="#一级标题" class="headerlink" title="一级标题"></a>一级标题</h2><h2 id="二级标题"><a href="#二级标题" class="headerlink" title="二级标题"></a>二级标题</h2><h2 id="三级标题"><a href="#三级标题" class="headerlink" title="三级标题"></a>三级标题</h2><h2 id="四级标题"><a href="#四级标题" class="headerlink" title="四级标题"></a>四级标题</h2><h2 id="五级标题"><a href="#五级标题" class="headerlink" title="五级标题"></a>五级标题</h2><h2 id="六级标题"><a href="#六级标题" class="headerlink" title="六级标题"></a>六级标题</h2>
       
     </div>
     
@@ -366,12 +312,12 @@
 
     <nav id="article-nav">
         
-            <div id="article-nav-newer" class="article-nav-title">
-                <a href="/2018/11/24/算法2：扫雷小游戏/">
-                    算法2：扫雷小游戏（leetcode-529）
+        
+            <div id="article-nav-older" class="article-nav-title">
+                <a href="/2018/11/25/Web-server/">
+                    WinSocket编程实现web_server
                 </a>
             </div>
-        
         
     </nav>
 
@@ -381,7 +327,7 @@
     <div id="toc" class="toc-article">
         <strong class="toc-title">文章目录</strong>
         
-            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#问题描述："><span class="toc-number">1.</span> <span class="toc-text">问题描述：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#我的解答"><span class="toc-number">2.</span> <span class="toc-text">我的解答</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#所有代码"><span class="toc-number">2.1.</span> <span class="toc-text">所有代码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#问题分析"><span class="toc-number">2.2.</span> <span class="toc-text">问题分析</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#问题解决"><span class="toc-number">2.3.</span> <span class="toc-text">问题解决</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#分割线"><span class="toc-number">3.</span> <span class="toc-text">分割线</span></a></li></ol>
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#一级标题"><span class="toc-number">1.</span> <span class="toc-text">一级标题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#二级标题"><span class="toc-number">2.</span> <span class="toc-text">二级标题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#三级标题"><span class="toc-number">3.</span> <span class="toc-text">三级标题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#四级标题"><span class="toc-number">4.</span> <span class="toc-text">四级标题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#五级标题"><span class="toc-number">5.</span> <span class="toc-text">五级标题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#六级标题"><span class="toc-number">6.</span> <span class="toc-text">六级标题</span></a></li></ol>
         
     </div>
     <style>
@@ -417,7 +363,7 @@
         </div>
         <script>
             window._bd_share_config={
-                "common":{"bdSnsKey":{},"bdText":"算法1：验证IP（leetcode-468）　| 不忘初心　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+                "common":{"bdSnsKey":{},"bdText":"test　| 不忘初心　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
         </script>
     
 
@@ -437,15 +383,15 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2018/11/24/算法2：扫雷小游戏/" title="上一篇: 算法2：扫雷小游戏（leetcode-529）">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
 
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
 
         
-            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
+            <a href="/2018/11/25/Web-server/" title="下一篇: WinSocket编程实现web_server">
+                <i class="fa fa-angle-right"></i>
+            </a>
         
     </div>
 
