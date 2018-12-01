@@ -3,11 +3,63 @@
   
     
     <entry>
+      <title>算法4：最小时间差(leetcode-539)</title>
+      <link href="/2018/12/01/%E7%AE%97%E6%B3%954%EF%BC%9A%E6%9C%80%E5%B0%8F%E6%97%B6%E9%97%B4%E5%B7%AE/"/>
+      <url>/2018/12/01/%E7%AE%97%E6%B3%954%EF%BC%9A%E6%9C%80%E5%B0%8F%E6%97%B6%E9%97%B4%E5%B7%AE/</url>
+      
+        <content type="html"><![CDATA[<p>给定一个 24 小时制（小时:分钟）的时间列表，找出列表中任意两个时间的最小时间差并已分钟数表示。这周时间太紧张了（CPU画的还没头绪😭）于是找了道稍微简单的，重在学习他人的思路。<br><a id="more"></a></p><h3 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h3><p>给定一个 24 小时制（小时:分钟）的时间列表，找出列表中任意两个时间的最小时间差并已分钟数表示。</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">示例 1：</span><br><span class="line">输入: [&quot;23:59&quot;,&quot;00:00&quot;]</span><br><span class="line">输出: 1  </span><br><span class="line"></span><br><span class="line">备注:</span><br><span class="line">1.列表中时间数在 2~20000 之间。</span><br><span class="line">2.每个时间取值在 00:00~23:59 之间。</span><br></pre></td></tr></table></figure><h3 id="问题分析"><a href="#问题分析" class="headerlink" title="问题分析"></a>问题分析</h3><p>一看这道题，思路很明确，将小时制字符串转化为对应分钟数，然后对分钟数进行排序。最后遍历一遍拍好的数组，找出最小时间差。对于边界条件，为了求出最后一个时间和第一个时间的时间差，在排序好的数组后边再加一项time[0]+1440(24*60)即可。</p><h3 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">str_to_int</span><span class="params">(<span class="keyword">const</span> <span class="built_in">string</span>&amp; a )</span></span></span><br><span class="line"><span class="function"><span class="comment">//将小时制字符串转化成分钟数</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line"><span class="keyword">return</span> ((a[<span class="number">0</span>] - <span class="string">'0'</span>) * <span class="number">600</span> + (a[<span class="number">1</span>] - <span class="string">'0'</span>) * <span class="number">60</span> + (a[<span class="number">3</span>] - <span class="string">'0'</span>) * <span class="number">10</span> + a[<span class="number">4</span>] - <span class="string">'0'</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">findMinDifference</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="built_in">string</span>&gt;&amp; timePoints)</span> </span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line"><span class="built_in">vector</span>&lt;<span class="keyword">bool</span>&gt; cnt(<span class="number">1440</span>, <span class="literal">false</span>);</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">auto</span> str : timePoints)</span><br><span class="line">&#123;</span><br><span class="line"><span class="keyword">if</span> (cnt[str_to_int(str)])<span class="keyword">return</span> <span class="number">0</span>;<span class="comment">//找到重复的时间</span></span><br><span class="line"><span class="keyword">else</span> cnt[str_to_int(str)] = <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; time;</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">1440</span>; i++) <span class="keyword">if</span> (cnt[i]) time.push_back(i);</span><br><span class="line">time.push_back(time[<span class="number">0</span>] + <span class="number">1440</span>);<span class="comment">//用于计算最迟的时间</span></span><br><span class="line"><span class="keyword">int</span> mindiff = time[<span class="number">1</span>] - time[<span class="number">0</span>];</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; time.size()<span class="number">-1</span>; i++) mindiff = min(mindiff, time[i + <span class="number">1</span>] - time[i]);</span><br><span class="line"><span class="keyword">return</span> mindiff;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>以上代码考虑到了字符串转化成的分钟数最多有1440(24*60)种可能性，因此采用了时间复杂度为O(n)的桶排序(而非nlogn)。值得学习的有vector变量的初始化，以及桶排序的思想,和库函数min()和sort()的使用以及一个C++的小细节（为什么定义成const string &amp; a而非string a）。leetcode提交测试击败了100%的提交。查看相同时间的提交用例发现别人在排序的时候都是用&lt; algorithm &gt;库中的sort()实现，该函数是用快排实现的，实现效率也较高，具体使用方法整理在了另一篇博客中。想想自己以前用到需要比较大小排序的算法都是自己手写，真是笨啊，费时费力效率还不一定高。现在传统的排序算法应该都写过了，以后就直接用现成的了。将精力更多的放在算法实现上面。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 每周三道算法题 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 排序 </tag>
+            
+            <tag> 字符串 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
+      <title>我和狗儿子们的故事</title>
+      <link href="/2018/11/30/%E6%88%91%E5%92%8C%E7%8B%97%E5%84%BF%E5%AD%90%E4%BB%AC%E7%9A%84%E6%95%85%E4%BA%8B/"/>
+      <url>/2018/11/30/%E6%88%91%E5%92%8C%E7%8B%97%E5%84%BF%E5%AD%90%E4%BB%AC%E7%9A%84%E6%95%85%E4%BA%8B/</url>
+      
+        <content type="html"><![CDATA[<p>这篇博客用来记录我和我的狗儿子们发生的一些故事，以及由此对生活的思考。<br><a id="more"></a></p><h2 id="前序"><a href="#前序" class="headerlink" title="前序"></a>前序</h2><p>先说说故事是怎么开始的吧。<br>武汉的秋天是那样的短暂，仿佛就在一夜之间。在某个清晨，满地的落叶留下了秋来过的痕迹，而冰冷的寒风和连绵的阴雨却又告诉你她已匆匆离去。而你也别妄想出门四处寻找她的影子，因为……此时的你已经被实验压得抬不起头（hhh，突然改变画风，不过是实话）。故事就发生在这样的阴雨天里。正当我背着小书包要去图书馆的时候，故事开始了。在我们寝室和操场之间有一个废弃的小操场，有传闻说是要在这里建一个室内游泳池的，但却一直没有动工，久而久之没人打理也就荒草丛生。一遇到下雨天，小操场便泥泞不堪，没人会愿意为了节约那么一点时间而抄近道踏入这片小操场。就在我在地下车库取车的时候，透过窗户，我看见这篇操场上有个阿姨在忙碌着什么，出于好奇我走近到窗户旁望了望。阿姨见了我，</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 记录生活 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 生活 </tag>
+            
+            <tag> 感动 </tag>
+            
+            <tag> 记录 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
       <title>C++STL部分整理</title>
       <link href="/2018/11/29/C-STL%E9%83%A8%E5%88%86%E6%95%B4%E7%90%86/"/>
       <url>/2018/11/29/C-STL%E9%83%A8%E5%88%86%E6%95%B4%E7%90%86/</url>
       
-        <content type="html"><![CDATA[<p>这篇博客用于整理平常经常用到的C++好用的函数（because经常忘记）和一些语法解析。<br><a id="more"></a><br>以前没学过C++，总感觉C++就是在C的基础上多了一点面向对象的东西和多了一些库函数和几个用法。然而最近接触过之后被这门语言折服了。就我学过的高级语言来说，他比C好用太多了，带给人的方便不是一点点，又比python效率高很多，实在让人难以不喜欢。一开始只是觉得C++的库函数很多，而且相较功能相似的C库函数来说封装的更好，让人更方便用。现在在实验中慢慢的体会到了一点面向对象的东西，不得不佩服（有时间在mooc上好好的再学学这种思想）。这篇博客用来整理一些平常经常用到的函数以及一些语法细节。C++是一门很重细节的语言，注重细节才能写出更加强大的程序。</p><h2 id="函数整理"><a href="#函数整理" class="headerlink" title="函数整理"></a>函数整理</h2><h3 id="排序-sort"><a href="#排序-sort" class="headerlink" title="排序-sort()"></a>排序-sort()</h3><p>函数原型<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//两参数</span></span><br><span class="line"><span class="keyword">template</span> &lt;<span class="class"><span class="keyword">class</span> <span class="title">RandomAccessIterator</span>&gt;</span></span><br><span class="line"><span class="class">  <span class="title">void</span> <span class="title">sort</span> (<span class="title">RandomAccessIterator</span> <span class="title">first</span>, <span class="title">RandomAccessIterator</span> <span class="title">last</span>);</span></span><br><span class="line"><span class="comment">//三参数</span></span><br><span class="line"><span class="keyword">template</span> &lt;<span class="class"><span class="keyword">class</span> <span class="title">RandomAccessIterator</span>, <span class="title">class</span> <span class="title">Compare</span>&gt;</span></span><br><span class="line"><span class="class">  <span class="title">void</span> <span class="title">sort</span> (<span class="title">RandomAccessIterator</span> <span class="title">first</span>, <span class="title">RandomAccessIterator</span> <span class="title">last</span>, <span class="title">Compare</span> <span class="title">comp</span>);</span></span><br></pre></td></tr></table></figure></p><p>参数解释：<br>[first,last)<br><a href="https://zh.cppreference.com/w/cpp/named_req/RandomAccessIterator" target="_blank" rel="noopener">RandomAccessIterator</a> first – 排序的数组的起始地址<br><a href="https://zh.cppreference.com/w/cpp/named_req/RandomAccessIterator" target="_blank" rel="noopener">RandomAccessIterator</a> last  – 排序的数组的结束地址<br>Compare comp   – 比较函数<br><a href="http://www.cplusplus.com/reference/algorithm/sort/" target="_blank" rel="noopener">用法示例</a>            </p><h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><h2 id="相关文章"><a href="#相关文章" class="headerlink" title="相关文章"></a>相关文章</h2>]]></content>
+        <content type="html"><![CDATA[<p>这篇博客用于整理平常经常用到的C++好用的函数（because经常忘记）和一些语法解析。<br><a id="more"></a><br>2018-11-29<br>以前没学过C++，总感觉C++就是在C的基础上多了一点面向对象的东西和多了一些库函数和几个用法。然而最近接触过之后被这门语言折服了。就我学过的高级语言来说，他比C好用太多了，带给人的方便不是一点点，又比python效率高很多，实在让人难以不喜欢。一开始只是觉得C++的库函数很多，而且相较功能相似的C库函数来说封装的更好，让人更方便用。现在在实验中慢慢的体会到了一点面向对象的东西，不得不佩服（有时间在mooc上好好的再学学这种思想）。这篇博客用来整理一些平常经常用到的函数以及一些语法细节。C++是一门很重细节的语言，注重细节才能写出更加强大的程序。</p><h2 id="函数整理"><a href="#函数整理" class="headerlink" title="函数整理"></a>函数整理</h2><h3 id="排序-sort"><a href="#排序-sort" class="headerlink" title="排序-sort()"></a>排序-sort()</h3><p>函数原型<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//两参数</span></span><br><span class="line"><span class="keyword">template</span> &lt;<span class="class"><span class="keyword">class</span> <span class="title">RandomAccessIterator</span>&gt;</span></span><br><span class="line"><span class="class">  <span class="title">void</span> <span class="title">sort</span> (<span class="title">RandomAccessIterator</span> <span class="title">first</span>, <span class="title">RandomAccessIterator</span> <span class="title">last</span>);</span></span><br><span class="line"><span class="comment">//三参数</span></span><br><span class="line"><span class="keyword">template</span> &lt;<span class="class"><span class="keyword">class</span> <span class="title">RandomAccessIterator</span>, <span class="title">class</span> <span class="title">Compare</span>&gt;</span></span><br><span class="line"><span class="class">  <span class="title">void</span> <span class="title">sort</span> (<span class="title">RandomAccessIterator</span> <span class="title">first</span>, <span class="title">RandomAccessIterator</span> <span class="title">last</span>, <span class="title">Compare</span> <span class="title">comp</span>);</span></span><br></pre></td></tr></table></figure></p><p>参数解释：<br>[first,last)<br><a href="https://zh.cppreference.com/w/cpp/named_req/RandomAccessIterator" target="_blank" rel="noopener">RandomAccessIterator</a> first – 排序的数组的起始地址<br><a href="https://zh.cppreference.com/w/cpp/named_req/RandomAccessIterator" target="_blank" rel="noopener">RandomAccessIterator</a> last  – 排序的数组的结束地址<br>Compare comp   – 比较函数<br><a href="http://www.cplusplus.com/reference/algorithm/sort/" target="_blank" rel="noopener">用法示例</a>            </p><h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><h2 id="相关文章"><a href="#相关文章" class="headerlink" title="相关文章"></a>相关文章</h2>]]></content>
       
       
       <categories>
@@ -18,6 +70,8 @@
       
       
         <tags>
+            
+            <tag> 进行中 </tag>
             
             <tag> C++语法 </tag>
             

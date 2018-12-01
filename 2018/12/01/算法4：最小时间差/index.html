@@ -15,13 +15,18 @@
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="不忘初心">
-<meta property="og:url" content="http://yoursite.com/tags/动态规划/index.html">
+<meta name="description" content="给定一个 24 小时制（小时:分钟）的时间列表，找出列表中任意两个时间的最小时间差并已分钟数表示。这周时间太紧张了（CPU画的还没头绪😭）于是找了道稍微简单的，重在学习他人的思路。">
+<meta name="keywords" content="排序,字符串">
+<meta property="og:type" content="article">
+<meta property="og:title" content="算法4：最小时间差(leetcode-539)">
+<meta property="og:url" content="http://yoursite.com/2018/12/01/算法4：最小时间差/index.html">
 <meta property="og:site_name" content="不忘初心">
+<meta property="og:description" content="给定一个 24 小时制（小时:分钟）的时间列表，找出列表中任意两个时间的最小时间差并已分钟数表示。这周时间太紧张了（CPU画的还没头绪😭）于是找了道稍微简单的，重在学习他人的思路。">
 <meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2018-12-01T04:01:12.583Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="不忘初心">
+<meta name="twitter:title" content="算法4：最小时间差(leetcode-539)">
+<meta name="twitter:description" content="给定一个 24 小时制（小时:分钟）的时间列表，找出列表中任意两个时间的最小时间差并已分钟数表示。这周时间太紧张了（CPU画的还没头绪😭）于是找了道稍微简单的，重在学习他人的思路。">
 
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 
@@ -53,7 +58,7 @@
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 
-<title>Tag: 动态规划 | 不忘初心</title>
+<title>算法4：最小时间差(leetcode-539) | 不忘初心</title>
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
@@ -63,9 +68,9 @@
         fancybox: true,
         animate: true,
         isHome: false,
-        isPost: false,
+        isPost: true,
         isArchive: false,
-        isTag: true,
+        isTag: false,
         isCategory: false,
         fancybox_js: "//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.js",
         scrollreveal: "//cdn.bootcss.com/scrollReveal.js/3.1.4/scrollreveal.min.js",
@@ -260,60 +265,158 @@
     </div>
     <link class="menu-list" tags="标签" friends="友情链接" about="关于我">
 </nav>
-      <div class="body-wrap">
+      <div class="body-wrap"><article id="post-算法4：最小时间差" class="article article-type-post" itemscope="" itemprop="blogPost">
   
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2018" class="archive-year">2018</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-          <div class="article-meta">
-              <a href="/2018/11/24/算法3：买卖股票的最佳时机/" class="archive-article-date">
-      <time datetime="2018-11-24T11:04:07.000Z" itemprop="datePublished">11-24</time>
+    <div class="article-meta">
+      <a href="/2018/12/01/算法4：最小时间差/" class="article-date">
+      <time datetime="2018-12-01T03:20:42.000Z" itemprop="datePublished">2018-12-01</time>
 </a>
 
 
-        </div>
-         
+    </div>
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/11/24/算法3：买卖股票的最佳时机/">算法3：买卖股票的最佳时机</a>
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      算法4：最小时间差(leetcode-539)
     </h1>
   
 
-        <div class="article-info info-on-archive">
-          
+      </header>
+      
+      <div class="article-info article-info-post">
+        
     <div class="article-category tagcloud">
     <a class="article-category-link" href="/categories/每周三道算法题/">每周三道算法题</a>
     </div>
 
 
-          
+        
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/动态规划/">动态规划</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/字符串/">字符串</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/排序/">排序</a></li></ul>
     </div>
 
-        </div>
         <div class="clearfix"></div>
-    </header>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>给定一个 24 小时制（小时:分钟）的时间列表，找出列表中任意两个时间的最小时间差并已分钟数表示。这周时间太紧张了（CPU画的还没头绪😭）于是找了道稍微简单的，重在学习他人的思路。<br><a id="more"></a></p>
+<h3 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h3><p>给定一个 24 小时制（小时:分钟）的时间列表，找出列表中任意两个时间的最小时间差并已分钟数表示。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">示例 1：</span><br><span class="line">输入: [&quot;23:59&quot;,&quot;00:00&quot;]</span><br><span class="line">输出: 1  </span><br><span class="line"></span><br><span class="line">备注:</span><br><span class="line">1.列表中时间数在 2~20000 之间。</span><br><span class="line">2.每个时间取值在 00:00~23:59 之间。</span><br></pre></td></tr></table></figure>
+<h3 id="问题分析"><a href="#问题分析" class="headerlink" title="问题分析"></a>问题分析</h3><p>一看这道题，思路很明确，将小时制字符串转化为对应分钟数，然后对分钟数进行排序。最后遍历一遍拍好的数组，找出最小时间差。对于边界条件，为了求出最后一个时间和第一个时间的时间差，在排序好的数组后边再加一项time[0]+1440(24*60)即可。</p>
+<h3 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">str_to_int</span><span class="params">(<span class="keyword">const</span> <span class="built_in">string</span>&amp; a )</span></span></span><br><span class="line"><span class="function"><span class="comment">//将小时制字符串转化成分钟数</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">return</span> ((a[<span class="number">0</span>] - <span class="string">'0'</span>) * <span class="number">600</span> + (a[<span class="number">1</span>] - <span class="string">'0'</span>) * <span class="number">60</span> + (a[<span class="number">3</span>] - <span class="string">'0'</span>) * <span class="number">10</span> + a[<span class="number">4</span>] - <span class="string">'0'</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">findMinDifference</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="built_in">string</span>&gt;&amp; timePoints)</span> </span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="built_in">vector</span>&lt;<span class="keyword">bool</span>&gt; cnt(<span class="number">1440</span>, <span class="literal">false</span>);	</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">auto</span> str : timePoints)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span> (cnt[str_to_int(str)])<span class="keyword">return</span> <span class="number">0</span>;<span class="comment">//找到重复的时间</span></span><br><span class="line">		<span class="keyword">else</span> cnt[str_to_int(str)] = <span class="literal">true</span>;</span><br><span class="line">	&#125;</span><br><span class="line">		<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; time;</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">1440</span>; i++) <span class="keyword">if</span> (cnt[i]) time.push_back(i);</span><br><span class="line">		time.push_back(time[<span class="number">0</span>] + <span class="number">1440</span>);<span class="comment">//用于计算最迟的时间</span></span><br><span class="line">		<span class="keyword">int</span> mindiff = time[<span class="number">1</span>] - time[<span class="number">0</span>];</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; time.size()<span class="number">-1</span>; i++) mindiff = min(mindiff, time[i + <span class="number">1</span>] - time[i]);</span><br><span class="line">		<span class="keyword">return</span> mindiff;</span><br><span class="line">	</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>以上代码考虑到了字符串转化成的分钟数最多有1440(24*60)种可能性，因此采用了时间复杂度为O(n)的桶排序(而非nlogn)。值得学习的有vector变量的初始化，以及桶排序的思想,和库函数min()和sort()的使用以及一个C++的小细节（为什么定义成const string &amp; a而非string a）。leetcode提交测试击败了100%的提交。查看相同时间的提交用例发现别人在排序的时候都是用&lt; algorithm &gt;库中的sort()实现，该函数是用快排实现的，实现效率也较高，具体使用方法整理在了另一篇博客中。想想自己以前用到需要比较大小排序的算法都是自己手写，真是笨啊，费时费力效率还不一定高。现在传统的排序算法应该都写过了，以后就直接用现成的了。将精力更多的放在算法实现上面。</p>
+
+      
+    </div>
+    
   </div>
+  
+    
+
+
+    <nav id="article-nav">
+        
+        
+            <div id="article-nav-older" class="article-nav-title">
+                <a href="/2018/11/30/我和狗儿子们的故事/">
+                    我和狗儿子们的故事
+                </a>
+            </div>
+        
+    </nav>
+
+  
 </article>
-  
-  
-    </div></section>
-  
+
+    <div id="toc" class="toc-article">
+        <strong class="toc-title">文章目录</strong>
+        
+            <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#问题描述"><span class="toc-number">1.</span> <span class="toc-text">问题描述</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#问题分析"><span class="toc-number">2.</span> <span class="toc-text">问题分析</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#代码实现"><span class="toc-number">3.</span> <span class="toc-text">代码实现</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#总结"><span class="toc-number">4.</span> <span class="toc-text">总结</span></a></li></ol>
+        
+    </div>
+    <style>
+        .left-col .switch-btn,
+        .left-col .switch-area {
+            display: none;
+        }
+        .toc-level-3 i,
+        .toc-level-3 ol {
+            display: none !important;
+        }
+    </style>
+
+    <input type="button" id="tocButton" value="隐藏目录" title="点击按钮隐藏或者显示文章目录">
+
+    <script>
+        yiliaConfig.toc = ["隐藏目录", "显示目录", !!"false"];
+    </script>
+
+
+
+    
+<div class="share">
+    
+        <div class="bdsharebuttonbox">
+            <a href="#" class="fa fa-twitter bds_twi" data-cmd="twi" title="分享到推特"></a>
+            <a href="#" class="fa fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+            <a href="#" class="fa fa-qq bds_sqq" data-cmd="sqq" title="分享给 QQ 好友"></a>
+            <a href="#" class="fa fa-files-o bds_copy" data-cmd="copy" title="复制网址"></a>
+            <a href="#" class="fa fa fa-envelope-o bds_mail" data-cmd="mail" title="通过邮件分享"></a>
+            <a href="#" class="fa fa-weixin bds_weixin" data-cmd="weixin" title="生成文章二维码"></a>
+            <a href="#" class="fa fa-share-alt bds_more" data-cmd="more"></a>
+        </div>
+        <script>
+            window._bd_share_config={
+                "common":{"bdSnsKey":{},"bdText":"算法4：最小时间差(leetcode-539)　| 不忘初心　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+        </script>
+    
+
+    
+</div>
+
+
+
+
+
+
 
     
 
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
+        
+
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+
+        
+            <a href="/2018/11/30/我和狗儿子们的故事/" title="下一篇: 我和狗儿子们的故事">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2018/12/01/算法4：最小时间差/">算法4：最小时间差(leetcode-539)</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/11/30/我和狗儿子们的故事/">我和狗儿子们的故事</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/11/29/C-STL部分整理/">C++STL部分整理</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/11/25/Web-server/">WinSocket编程实现web_server</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/11/24/算法3：买卖股票的最佳时机/">算法3：买卖股票的最佳时机</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/11/24/算法2：扫雷小游戏/">算法2：扫雷小游戏（leetcode-529）</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/11/22/算法1：验证IP/">算法1：验证IP（leetcode-468）</a></li></ul>
+
+
+
+
+    <script>
+        
+    </script>
 </div>
       <footer id="footer">
     <div class="outer">
