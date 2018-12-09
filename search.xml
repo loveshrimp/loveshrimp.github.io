@@ -3,6 +3,29 @@
   
     
     <entry>
+      <title>分布式系统</title>
+      <link href="/2018/12/07/%E5%88%86%E5%B8%83%E5%BC%8F%E7%B3%BB%E7%BB%9F/"/>
+      <url>/2018/12/07/%E5%88%86%E5%B8%83%E5%BC%8F%E7%B3%BB%E7%BB%9F/</url>
+      
+        <content type="html"><![CDATA[<p>本文是为了操作系统的课堂任务而整理的一些资料。<br><a id="more"></a></p><h2 id="提纲"><a href="#提纲" class="headerlink" title="提纲"></a>提纲</h2><p><strong>说明</strong><br>报告要求时间:5~10分钟。<br>介绍时间安排及思路建议：（请点击左侧小标题快速查找内容）</p><p><strong>一.什么是分布式系统</strong>：——发展历程,适用范围</p><ol><li>分布式系统发展史</li><li>分布式系统概念</li><li>分布式系统的应用 </li></ol><p><strong>二.分布式系统的特性</strong>：——优缺点，对比分析</p><ol><li>列举相关特性，简单介绍。</li><li>和传统系统构架做对比。 </li></ol><p><strong>三.分布式系统的未来</strong>：——未来展望</p><ol><li>分析面临的挑战</li><li>分析未来形势<h2 id="什么是分布式系统"><a href="#什么是分布式系统" class="headerlink" title="什么是分布式系统"></a>什么是分布式系统</h2><h3 id="分布式系统发展史"><a href="#分布式系统发展史" class="headerlink" title="分布式系统发展史"></a>分布式系统发展史</h3><blockquote><p>首先讲讲发展史。</p></blockquote></li></ol><p>参考网站：</p><p><a href="https://www.infoq.cn/article/the-evolution-of-distributed-systems" target="_blank" rel="noopener">分布式系统发展史</a><br><a href="https://zhuanlan.zhihu.com/p/31392387" target="_blank" rel="noopener">操作系统的发展过程</a></p><h3 id="分布式系统的概念"><a href="#分布式系统的概念" class="headerlink" title="分布式系统的概念"></a>分布式系统的概念</h3><blockquote><p>引出分布式系统的定义，再做简单的介绍</p><ul><li>定义（概念）</li><li>分类</li></ul></blockquote><p>参考网站：<br><a href="http://www.baike.com/wiki/%E5%88%86%E5%B8%83%E5%BC%8F%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F" target="_blank" rel="noopener">wiki介绍</a><br><a href="https://baike.baidu.com/item/%E5%88%86%E5%B8%83%E5%BC%8F%E8%BD%AF%E4%BB%B6%E7%B3%BB%E7%BB%9F/1847932?fromtitle=%E5%88%86%E5%B8%83%E5%BC%8F%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F&amp;fromid=2475063" target="_blank" rel="noopener">百度文库定义</a><br><a href="https://www.zhihu.com/question/20004877" target="_blank" rel="noopener">区别一下分布式系统与集群</a><br><a href="https://www.hollischuang.com/archives/655" target="_blank" rel="noopener">初识分布式系统</a><br><a href="http://www.cbdio.com/BigData/2016-03/25/content_4726270.htm" target="_blank" rel="noopener">分布式系统概念及原理介绍</a><br><a href="https://blog.csdn.net/qq_33880788/article/details/79476715" target="_blank" rel="noopener">分布式操作系统简介</a><br><a href="https://blog.csdn.net/caoshuming_500/article/details/51482566" target="_blank" rel="noopener">分布式操作系统概念</a><br><a href="https://www.cnblogs.com/xybaby/p/7787034.html#_label_5" target="_blank" rel="noopener">什么是分布式系统，如何学习分布式系统</a><br><a href="https://waylau.com/talk-about-distributed-system/" target="_blank" rel="noopener">用大白话聊聊分布式系统</a></p><h3 id="分布式系统的应用"><a href="#分布式系统的应用" class="headerlink" title="分布式系统的应用"></a>分布式系统的应用</h3><blockquote><p>举例让大家更通俗的理解分布式系统<br>细讲其中一个例子，再（ppt）展示一些其他的例子 </p></blockquote><p>细讲：<br>大型多人在线游戏（LOL？）</p><p>其他例子：<br><img src="1.png" alt=""><br><a href="http://www.cbdio.com/BigData/2016-03/25/content_4726270.htm" target="_blank" rel="noopener">分布式系统应用介绍</a></p><h2 id="分布式系统的特性"><a href="#分布式系统的特性" class="headerlink" title="分布式系统的特性"></a>分布式系统的特性</h2><h3 id="分布式系统的系统特性"><a href="#分布式系统的系统特性" class="headerlink" title="分布式系统的系统特性"></a>分布式系统的系统特性</h3><blockquote><p>列举一些，简单说明即可</p></blockquote><h3 id="传统架构和分布式系统架构的优缺点"><a href="#传统架构和分布式系统架构的优缺点" class="headerlink" title="传统架构和分布式系统架构的优缺点"></a>传统架构和分布式系统架构的优缺点</h3><blockquote><p>将两者做对比，可以表格或图的形式展示</p></blockquote><p>参考文章<br><a href="https://my.oschina.net/vshcxl/blog/1787977" target="_blank" rel="noopener">传统架构和分布式系统架构的优缺点</a><br><a href="https://blog.csdn.net/zhouhuakang/article/details/50780830" target="_blank" rel="noopener">分布式架构的优缺点</a><br><a href="http://www.west.cn/cms/wiki/server/2017-12-08/4897.html" target="_blank" rel="noopener">什么是分布式操作系统？有哪些优缺点？</a></p><h2 id="分布式系统面临的挑战"><a href="#分布式系统面临的挑战" class="headerlink" title="分布式系统面临的挑战"></a>分布式系统面临的挑战</h2><blockquote><p>分析下当前分布式操作系统发展形势即未来前景。（根据时间决定内容多少）</p></blockquote><p><a href="https://www.huoxing24.com/newsdetail/20180810191638792083.html" target="_blank" rel="noopener">分布式计算现状与未来</a><br><a href="https://wanwang.aliyun.com/info/1555886.html" target="_blank" rel="noopener">分布式文件系统未来</a><br><a href="http://www.chinastor.com/a/jishu/FS/0203200112016.html" target="_blank" rel="noopener">分布式存储的发展演变及未来展望</a></p><h2 id="相关资料链接"><a href="#相关资料链接" class="headerlink" title="相关资料链接"></a>相关资料链接</h2><p><strong>ppt参考</strong><br><a href="http://read.pudn.com/downloads128/ebook/541567/%B5%DA%CA%AE%D5%C2%20-%20%20%B7%D6%B2%BC%CA%BD%B2%D9%D7%F7%CF%B5%CD%B3.ppt" target="_blank" rel="noopener">分布式操作系统ppt下载1</a><br><a href="http://staff.ustc.edu.cn/~dingqing/teach/dos/lecture/DOS-CH1-introduction.ppt" target="_blank" rel="noopener">分布式操作系统ppt下载2</a><br><a href="https://www.slideserve.com/len-horn/7043480" target="_blank" rel="noopener">分布式系统ppt参考</a><br><strong>其他</strong><br><a href="https://github.com/allwefantasy/my-life/blob/master/yarn-operation-system.md" target="_blank" rel="noopener">github相关总结</a></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 其他 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 分布式系统介绍 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
       <title>算法4：最小时间差(leetcode-539)</title>
       <link href="/2018/12/01/%E7%AE%97%E6%B3%954%EF%BC%9A%E6%9C%80%E5%B0%8F%E6%97%B6%E9%97%B4%E5%B7%AE/"/>
       <url>/2018/12/01/%E7%AE%97%E6%B3%954%EF%BC%9A%E6%9C%80%E5%B0%8F%E6%97%B6%E9%97%B4%E5%B7%AE/</url>
