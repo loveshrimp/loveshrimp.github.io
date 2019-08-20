@@ -7,7 +7,7 @@
       <link href="/2099/09/09/ENmovies/"/>
       <url>/2099/09/09/ENmovies/</url>
       
-        <content type="html"><![CDATA[<p>最近为了准备四六级考试，去youtube和TED上看了看，发现了一些很有趣的频道，听着也不是很难，而且对我也很有帮助。感觉还蛮有意思的，以后决定常常学习这些视频，每看完一个视频都用思维导图的形式做总结。<br><a id="more"></a></p><h2 id="1-How-to-become-a-better-reader"><a href="#1-How-to-become-a-better-reader" class="headerlink" title="1.How to become a better reader"></a>1.How to become a better reader</h2><p>一直觉得自己不会看书，特别是专业课的书，常常看着看着就出了神。也常常抓不住书中的重点。想想看很大一部分原因是自己小时候读书太少了，也很少静下心来投入的去钻研过某些书籍。从这个视频中我学到了很多：看书必须拿笔，有问题或者不懂得东西先标记等看完有了大体印象后再返回来查，讲重点内容讲给自己听以加深印象和理解…..The movie really helps a lot,hope me happy reading~<br><img src="1.png" alt=""></p>]]></content>
+        <content type="html"><![CDATA[<p>最近为了准备四六级考试，去youtube和TED上看了看，发现了一些很有趣的频道，听着也不是很难，而且对我也很有帮助。感觉还蛮有意思的，以后决定常常学习这些视频，每看完一个视频都用思维导图的形式做总结。<br><a id="more"></a></p><h2 id="1-How-to-become-a-better-reader"><a href="#1-How-to-become-a-better-reader" class="headerlink" title="1.How to become a better reader"></a>1.How to become a better reader</h2><p>一直觉得自己不会看书，特别是专业课的书，常常看着看着就出了神。也常常抓不住书中的重点。想想看很大一部分原因是自己小时候读书太少了，也很少静下心来投入的去钻研过某些书籍。从这个视频中我学到了很多：看书时笔不离手，有问题或者不懂得东西先标记等看完有了大体印象后再返回来查，讲重点内容讲给自己听以加深印象和理解…..The movie really helps a lot,hope me happy reading~<br><img src="1.png" alt=""></p>]]></content>
       
       
       <categories>
@@ -24,6 +24,31 @@
             <tag> 积累 </tag>
             
             <tag> 英语 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
+      <title>python数学处理相关库</title>
+      <link href="/2019/05/13/python%E7%9B%B8%E5%85%B3%E5%BA%93/"/>
+      <url>/2019/05/13/python%E7%9B%B8%E5%85%B3%E5%BA%93/</url>
+      
+        <content type="html"><![CDATA[<p>整理了机器学习中常用的数学处理的库，numpy，matplot等的相关函数的用法。<br><a id="more"></a></p><h2 id="Numpy"><a href="#Numpy" class="headerlink" title="Numpy"></a>Numpy</h2><h3 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h3><p>NumPy(Numerical Python) 是 Python 语言的一个扩展程序库，支持大量的维度数组与矩阵运算，此外也针对数组运算提供大量的数学函数库。</p><h3 id="Ndarray对象"><a href="#Ndarray对象" class="headerlink" title="Ndarray对象"></a>Ndarray对象</h3>]]></content>
+      
+      
+      <categories>
+          
+          <category> python </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> numpy </tag>
+            
+            <tag> matplot </tag>
             
         </tags>
       
@@ -57,13 +82,23 @@
       <link href="/2018/12/11/%E8%BF%9B%E7%A8%8B%E6%8E%A7%E5%88%B6%E5%AE%9E%E9%AA%8C/"/>
       <url>/2018/12/11/%E8%BF%9B%E7%A8%8B%E6%8E%A7%E5%88%B6%E5%AE%9E%E9%AA%8C/</url>
       
-        <content type="html"><![CDATA[]]></content>
+        <content type="html"><![CDATA[<a id="more"></a>]]></content>
       
+      
+      <categories>
+          
+          <category> 操作系统 </category>
+          
+      </categories>
       
       
         <tags>
             
             <tag> 操作系统实验 </tag>
+            
+            <tag> 进程 </tag>
+            
+            <tag> fork </tag>
             
         </tags>
       
